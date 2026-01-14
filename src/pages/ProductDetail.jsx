@@ -10,7 +10,7 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 
-const WHATSAPP = "919917354112";
+const WHATSAPP = "";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -220,3 +220,4 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
