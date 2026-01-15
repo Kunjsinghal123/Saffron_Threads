@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import API from "../services/api";
 
 const emptyProduct = {
-  productId: "",
   name: "",
   description: "",
   category: "Women",
@@ -12,7 +11,6 @@ const emptyProduct = {
   length: "",
   work: "",
   sizeRange: "",
-  price: "",
   stock: "",
   rating: "",
   images: [""],
@@ -258,3 +256,4 @@ const ProductForm = ({ fetchProducts, editProduct, setEditProduct }) => {
 };
 
 export default ProductForm;
+
