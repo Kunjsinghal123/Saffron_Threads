@@ -66,7 +66,8 @@ const ProductDetail = () => {
     );
   }
 
-  const msg = `Hi, I'm interested in *${product.name}* (₹${product.price})`;
+ const msg = `Hi, I'm interested in *${product.name}*`;
+
 
   /* ================= UI ================= */
 
@@ -220,4 +221,5 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
 
