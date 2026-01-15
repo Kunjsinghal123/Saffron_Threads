@@ -91,12 +91,6 @@ const ProductForm = ({ fetchProducts, editProduct, setEditProduct }) => {
       <div className="grid md:grid-cols-2 gap-4">
         <input
           className="border p-2 rounded"
-          placeholder="Product ID"
-          value={product.productId}
-          onChange={(e) => update("productId", e.target.value)}
-        />
-        <input
-          className="border p-2 rounded"
           placeholder="Name"
           value={product.name}
           onChange={(e) => update("name", e.target.value)}
@@ -136,13 +130,6 @@ const ProductForm = ({ fetchProducts, editProduct, setEditProduct }) => {
           placeholder="Size Range"
           value={product.sizeRange}
           onChange={(e) => update("sizeRange", e.target.value)}
-        />
-        <input
-          className="border p-2 rounded"
-          type="number"
-          placeholder="Price"
-          value={product.price}
-          onChange={(e) => update("price", e.target.value)}
         />
         <input
           className="border p-2 rounded"
@@ -200,7 +187,7 @@ const ProductForm = ({ fetchProducts, editProduct, setEditProduct }) => {
           + Add another image
         </button>
 
-        {/* ✅ LIVE IMAGE PREVIEW (UNLIMITED) */}
+        {/* ✅ LIVE IMAGE PREVIEW */}
         {product.images.some(Boolean) && (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
             {product.images.map(
@@ -256,4 +243,3 @@ const ProductForm = ({ fetchProducts, editProduct, setEditProduct }) => {
 };
 
 export default ProductForm;
-
