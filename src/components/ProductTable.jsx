@@ -14,7 +14,7 @@ const ProductTable = ({ products, fetchProducts, setEditProduct }) => {
         <thead>
           <tr className="border-b">
             <th>Name</th>
-            <th>Price</th>
+            {/* <th>Price</th> */}
             <th>Category</th>
             <th>Action</th>
           </tr>
@@ -24,7 +24,7 @@ const ProductTable = ({ products, fetchProducts, setEditProduct }) => {
           {products.map((p) => (
             <tr key={p._id} className="border-b">
               <td>{p.name}</td>
-              <td>₹{p.price}</td>
+             {/*  <td>₹{p.price}</td> */}
               <td>{p.category}</td>
               <td>
                 {/* ✅ EDIT */}
@@ -52,3 +52,4 @@ const ProductTable = ({ products, fetchProducts, setEditProduct }) => {
 };
 
 export default ProductTable;
+
