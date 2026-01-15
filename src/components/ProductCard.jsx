@@ -79,11 +79,7 @@ const ProductCard = ({ product }) => {
           )}
         </div>
 
-        {/* PRICE */}
-        <div className="pt-1 text-lg font-semibold text-pink-600">
-          ₹{product.price}
-        </div>
-
+       
         {/* subtle divider */}
         <div className="mt-2 h-px w-8 bg-gray-200 mx-auto" />
       </div>
@@ -92,3 +88,4 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+
