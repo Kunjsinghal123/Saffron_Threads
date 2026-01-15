@@ -165,11 +165,6 @@ const ProductDetail = () => {
             </div>
           </div>
 
-          {/* PRICE */}
-          <div className="text-4xl font-bold text-pink-600">
-            ₹{product.price}
-          </div>
-
           {/* TRUST */}
           <div className="flex gap-6 text-sm text-gray-600">
             <span className="flex items-center gap-2">
@@ -221,5 +216,6 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
 
 
