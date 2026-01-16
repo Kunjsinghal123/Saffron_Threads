@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import API from "../services/api";
 
 const emptyProduct = {
+  productId: "",          // ✅ added
   name: "",
   description: "",
   category: "Women",
@@ -12,6 +13,7 @@ const emptyProduct = {
   work: "",
   sizeRange: "",
   stock: "",
+  price: "",              // ✅ added
   rating: "",
   images: [""],
 };
@@ -56,7 +58,7 @@ const ProductForm = ({ fetchProducts, editProduct, setEditProduct }) => {
 
     try {
       const payload = {
-        ...product,
+        ...product, // ✅ productId & price auto included
         images: product.images.filter(Boolean),
       };
 
@@ -89,48 +91,72 @@ const ProductForm = ({ fetchProducts, editProduct, setEditProduct }) => {
 
       {/* BASIC INFO */}
       <div className="grid md:grid-cols-2 gap-4">
+        {/* ✅ added */}
+        <input
+          className="border p-2 rounded"
+          placeholder="Product ID"
+          value={product.productId}
+          onChange={(e) => update("productId", e.target.value)}
+        />
+
         <input
           className="border p-2 rounded"
           placeholder="Name"
           value={product.name}
           onChange={(e) => update("name", e.target.value)}
         />
+
         <input
           className="border p-2 rounded"
           placeholder="Sub Category"
           value={product.subCategory}
           onChange={(e) => update("subCategory", e.target.value)}
         />
+
+        {/* ✅ added */}
+        <input
+          className="border p-2 rounded"
+          type="number"
+          placeholder="Price"
+          value={product.price}
+          onChange={(e) => update("price", e.target.value)}
+        />
+
         <input
           className="border p-2 rounded"
           placeholder="Fabric"
           value={product.fabric}
           onChange={(e) => update("fabric", e.target.value)}
         />
+
         <input
           className="border p-2 rounded"
           placeholder="Style"
           value={product.style}
           onChange={(e) => update("style", e.target.value)}
         />
+
         <input
           className="border p-2 rounded"
           placeholder="Length"
           value={product.length}
           onChange={(e) => update("length", e.target.value)}
         />
+
         <input
           className="border p-2 rounded"
           placeholder="Work"
           value={product.work}
           onChange={(e) => update("work", e.target.value)}
         />
+
         <input
           className="border p-2 rounded"
           placeholder="Size Range"
           value={product.sizeRange}
           onChange={(e) => update("sizeRange", e.target.value)}
         />
+
         <input
           className="border p-2 rounded"
           type="number"
@@ -138,6 +164,7 @@ const ProductForm = ({ fetchProducts, editProduct, setEditProduct }) => {
           value={product.stock}
           onChange={(e) => update("stock", e.target.value)}
         />
+
         <input
           className="border p-2 rounded"
           type="number"
@@ -187,7 +214,6 @@ const ProductForm = ({ fetchProducts, editProduct, setEditProduct }) => {
           + Add another image
         </button>
 
-        {/* ✅ LIVE IMAGE PREVIEW */}
         {product.images.some(Boolean) && (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
             {product.images.map(
